@@ -5,3 +5,4 @@ In this chapter I'd like to introduce what can lisp programs do in CAD drawing i
 Generally speaking lisp programs can do every command that can be entered manually by the user. It is especially helpful in highly repetitive and calculative works.
 ## How to create a lisp program?
 The first step is to get your self familiar with Visual Lisp Compiler: 
+Visual Lisp Compiler can be found in CAD, the good news is that this means you can edit your program and apply it in your dwg files directly, and you don't have to launch it; the bad news is that this compiler is in a quite antique style. 
