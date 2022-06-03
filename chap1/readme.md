@@ -1,24 +1,35 @@
 
 # Start your first lisp program in CAD
-In this chapter I'd like to introduce what can lisp programs do in CAD drawing in a simplified way and I will put forward a few examples on how to create your unique programs that can help reduce your workload.
+In this chapter I'd like to introduce what can lisp programs do in CAD drawing in a simplified way and I will put forward a few examples on how to create your unique programs that can help reduce your workload.  
+本章节将通过几个例子介绍lisp程序入门及其如何减少CAD制图工作量。  
 ## What can lisp do?
-Generally speaking lisp programs can do every command that can be entered manually by the user. It is especially helpful in highly repetitive and calculative works.
+Generally speaking lisp programs can do every command that can be entered manually by the user. It is especially helpful in highly repetitive and calculative works.  
+通常来书通过lisp程序可以实现所有通过快捷键人工输入的部分，有望减少大幅高重复性和有需要大量计算的工作的工作量。  
 ## How to create a lisp program?
-The first step is to get your self familiar with Visual Lisp Compiler:Visual Lisp Compiler can be found in Tool Bar in CAD.It looks very antique, however the good news is that with this embedded compiler you can apply your program whiout packing it. Just creat a new lsp file to start your programming! 
+The first step is to get your self familiar with Visual Lisp Compiler:Visual Lisp Compiler can be found in Tool Bar in CAD.It looks very antique, however the good news is that with this embedded compiler you can apply your program whiout packing it. Just creat a new lsp file to start your programming!  
+第一步：打开CAD自带的visual lisp编译器（在CAD工具栏-工具中找到）。新建一个.lsp文件即可开始编写程序。  
 ## Basic grammer - Logically Speaking
-If you are familiar with Python, C or any other kind of programming language, you will find that lisp is not too difficult to comprehend.  
+If you are familiar with Python, C or any other kind of programming language, you will find that lisp is not too difficult to comprehend. Well, don't worry if you never coded before, we can comprehend lisp in a linuistic perspect.  
 There are only 2 simple but significant rules in lisp: the bracket and the order of the sentences.  Bracket functions the same as ';' in C, or '.' in English. The word order is always: verb, subject, object.  
-eg1: When you want to express "let a equals to 5", we express it as 'a=5' in python, but in lisp we should swap the word order and it will be like (don't forget the bracket):
+如果你熟悉Python，C或任意一门编程语言，熟悉lisp这个过程会比较简单。即使不了解其他的编程语言问题也不大，我们可以用语言学的知识去解释。  
+Lisp语言两个显著的特点是括号（类似句子的句号）和动词在前的语序。  
+eg1: When you want to express "let a equals to 5", we express it as 'a=5' in python. Both are in a "Subject-verb-object" order. But in lisp we should swap the word order and it will be like (don't forget the bracket):  
+例1：如果你想说让a等于5，在python中它会被写成“a=5”，都为“主谓宾”顺序。而在lisp中我们应该交换谓语和主语的位置（别忘了括号）：  
 ```
 (setq a 5) 
 ```
-eg2: When you want to express "is a>b ?", we express it as 'if a>5' in python, but in lisp we should swap the word order and it will be like:  
+eg2: When you want to express "is a>b ...?", we express it as 'if a>5' in python, but in lisp we should swap the word order and it will be like:  
+例2：如果你想说a大于b吗？，在python中它会被写成“if a>5 ”。而在lisp中我们应该交换谓语和主语的位置，像这样：
 ```
-(> a 5)  
+(if (> a 5) 
+  (...)
+  )
 ```
 If you want to apply lisp in CAD, there is one more vital sentence you should put into your mind: (command "key")  
 Basically, command means the lisp will press the key operarion just like you press the key board while you do CAD drawing.  
+如果你想在CAD中运用lisp语言那么 (command "key")  这个句子非常重要。它等同于你在键盘上按下对应的快捷键，即command lisp帮你干活。
 eg3: if you want to draw a line from (x1,y1) to (x2,y2):  
+例3：画过（x1,y1）(x2,y2)的线段：
 ```
 (command "LINE" "x1,y1" "x2,y2")  
 ```
@@ -26,7 +37,8 @@ OR
 ```
 (command "LINE"  "x1,y1,0" "x2-x1, y2-y1,0")  
 ```
-eg4: let us go futher with eg3 and aim to create a "more pratical" lisp program which can draw a line given to 2 coordinate points - (x1,y1) and (x2,y2). In order to do that you should know this sentence:
+eg4: let us go futher with eg3 and aim to create a "more pratical" lisp program which can draw a line given to 2 coordinate points - (x1,y1) and (x2,y2). In order to do that you should know this sentence:  
+例4：
 ```
 (getstring "\n Sth you wish to remind：")
 ```
