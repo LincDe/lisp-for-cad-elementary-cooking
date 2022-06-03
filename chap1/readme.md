@@ -11,8 +11,7 @@ The first step is to get your self familiar with Visual Lisp Compiler:Visual Lis
 ## Basic grammer - Logically Speaking
 If you are familiar with Python, C or any other kind of programming language, you will find that lisp is not too difficult to comprehend. Well, don't worry if you never coded before, we can comprehend lisp in a linuistic perspect.  
 There are only 2 simple but significant rules in lisp: the bracket and the order of the sentences.  Bracket functions the same as ';' in C, or '.' in English. The word order is always: verb, subject, object.  
-如果你熟悉Python，C或任意一门编程语言，熟悉lisp这个过程会比较简单。即使不了解其他的编程语言问题也不大，我们可以用语言学的知识去解释。  
-Lisp语言两个显著的特点是括号（类似句子的句号）和动词在前的语序。  
+如果你熟悉Python，C或任意一门编程语言，熟悉lisp这个过程会比较简单。即使不了解其他的编程语言问题也不大，我们可以用语言学的知识去解释。Lisp语言两个显著的特点是括号（类似句子的句号）和动词在前的语序。  
 eg1: When you want to express "let a equals to 5", we express it as 'a=5' in python. Both are in a "Subject-verb-object" order. But in lisp we should swap the word order and it will be like (don't forget the bracket):  
 例1：如果你想说让a等于5，在python中它会被写成“a=5”，都为“主谓宾”顺序。而在lisp中我们应该交换谓语和主语的位置（别忘了括号）：  
 ```
@@ -37,12 +36,13 @@ OR
 ```
 (command "LINE"  "x1,y1,0" "x2-x1, y2-y1,0")  
 ```
-eg4: let us go futher with eg3 and aim to create a "more pratical" lisp program which can draw a line given to 2 coordinate points - (x1,y1) and (x2,y2). In order to do that you should know this sentence:  
-例4：
+eg4: let us go futher with eg3 and aim to create a more complicated and "more pratical" lisp program which can draw a line given to 2 coordinate points - (x1,y1) and (x2,y2). In order to do that you should know this sentence:  
+例4：试着去编写更复杂“实用”的lisp程序吧，如输入两个点的坐标，让程序绘制过该两点的线段（并不实用[doge]）。那么你需要知道如何输入参数值：
 ```
 (getstring "\n Sth you wish to remind：")
 ```
 This is a practical way out when you don't need users to enter a bunch of parameters and it's especially useful if you don't want to add a dialog box in your program. Now with "getstring" we can set (x1,y1) and (x2,y2) to 2 parameters, let's say a and b:  
+如果你不想给你的小破程序特地加一个对话框函数的话这个句子非常有用哦[dege]~把两个点的数值传给参数a和b应该这样写（运行这两句话你就可以在CAD界面输入这两个点的坐标了）：
 ```
 (setq a (getstring "\n enter (x1,y1)："))
 (setq b (getstring "\n enter (x2,y2)："))
@@ -50,6 +50,7 @@ This is a practical way out when you don't need users to enter a bunch of parame
 ## Fuctions
 We are very close to success now!  
 The function format in lisp is like:  
+Ok,例4马上就要写出来啦！为了后续更好的利用我们要把写好的句子封装在函数里面。函数应该这样写：
 ```
 (defun FUNCTION_NAME(a,b,c...)
 
@@ -64,6 +65,8 @@ OR
 "a,b,c..."stands for the parameters  
 The difference between the first expression and the second expression:  
 If you want to use shortcut key to get access to the function - namely, the main function- you should use the second format with "C:". If you write this function in a bigger project and the function will only be allowed to be accessed by the main function, then let's choose the first format.  
+"a,b,c..."是你想要传入函数的全局变量。  
+两个格式不同的地方在于第一种格式不属于主函数，这样的函数格式主要运用在子函数中，方便主函数调用子函数片段。第二个有“C:”的函数格式才是主函数的格式哦，
 ## To sum up
 1. To learn to create lisp program, you shold bare in mind 2 grammery features: () and verb-first order.  
 2. Lisp program canbe compiled in a embedded compiler in CAD and canbe tested line-by-line. Thus you don't have to pack your code in a function to test/use it, however if the code is packed in a main function it will be much easier to share it with your colleagues and more pratical. If you are not sure what result your code will return, just run it (line-by-line) and see if it is what you want.
