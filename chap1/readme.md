@@ -13,13 +13,19 @@ eg1: When you want to express "let a equals to 5", we express it as 'a=5' in pyt
 (setq a 5) 
 ```
 eg2: When you want to express "is a>b ?", we express it as 'if a>5' in python, but in lisp we should swap the word order and it will be like:  
+```
 (> a 5)  
+```
 If you want to apply lisp in CAD, there is one more vital sentence you should put into your mind: (command "key")  
 Basically, command means the lisp will press the key operarion just like you press the key board while you do CAD drawing.
 eg3: if you want to draw a line from (x1,y1) to (x2,y2):  
+```
 (command "LINE" "x1,y1" "x2,y2")  
+```
 OR  
+```
 (command "LINE"  "x1,y1,0" "x2-x1, y2-y1,0")  
+```
 eg4: let us go futher with eg3 and aim to create a "real" lisp program which can draw a line given to 2 coordinate points-(x1,y1) and (x2,y2)  
 Now we need to 
 
