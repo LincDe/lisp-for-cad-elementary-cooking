@@ -72,8 +72,9 @@ If you want to use shortcut key to get access to the function - namely, the main
 ## To sum up
 1. To learn to create lisp program, you shold bare in mind 2 grammery features: () and verb-first order.  or （verb subject object）
 2. Lisp program canbe compiled in a embedded compiler in CAD and canbe tested line-by-line. Thus you don't have to pack your code in a function to test/use it, however if the code is packed in a main function it will be much easier to share it with your colleagues and more pratical. If you are not sure what result your code will return, just run it (line-by-line) and see if it is what you want.
-3. To check more basic grammar expressions, check chap1-eg.lsp or reference: https://www.yiibai.com/lisp/lisp_decisions.html  
-小结：
+3. To check more basic grammar expressions, check chap1-eg.lsp or reference: https://www.yiibai.com/lisp/lisp_decisions.html    
+
+小结：  
 1. 你需要知道lisp基本格式：（谓语 主语 宾语）
 2. lisp程序可以直接在CAD内嵌的编译器中运行（选择想要运行的行，点击运行这些行）。所以编写测试阶段/临时使用没有必要一次次的在别的cad中加载这个lsp文件。但是封装函数可以让你的程序更有实用性，更方便分享。
 3. 更多基础语法详见：chap1-eg.lsp或 https://www.yiibai.com/lisp/lisp_decisions.html 
