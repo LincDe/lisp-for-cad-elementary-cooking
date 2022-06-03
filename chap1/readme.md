@@ -8,8 +8,10 @@ The first step is to get your self familiar with Visual Lisp Compiler:Visual Lis
 ## Basice grammer
 If you are familiar with Python, C or any other kind of programming language, you will find that lisp is not too difficult to comprehend.  
 There are only 2 simple but significant rules in lisp: the bracket and the order of the sentences.  Bracket functions the same as ';' in C, or '.' in English. The word order is always: verb, subject, object.  
-eg1: When you want to express "let a equals to 5", we express it as 'a=5' in python, but in lisp we should swap the word order and it will be like (don't forget the bracket):  
-(setq a 5)  
+eg1: When you want to express "let a equals to 5", we express it as 'a=5' in python, but in lisp we should swap the word order and it will be like (don't forget the bracket):
+```
+(setq a 5) 
+```
 eg2: When you want to express "is a>b ?", we express it as 'if a>5' in python, but in lisp we should swap the word order and it will be like:  
 (> a 5)  
 If you want to apply lisp in CAD, there is one more vital sentence you should put into your mind: (command "key")  
