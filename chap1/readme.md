@@ -11,7 +11,8 @@ The first step is to get your self familiar with Visual Lisp Compiler:Visual Lis
 ## Basic grammer - Logically Speaking
 If you are familiar with Python, C or any other kind of programming language, you will find that lisp is not too difficult to comprehend. Well, don't worry if you never coded before, we can comprehend lisp in a linuistic perspect.  
 There are only 2 simple but significant rules in lisp: the bracket and the order of the sentences.  Bracket functions the same as ';' in C, or '.' in English. The word order is always: verb, subject, object.  
-如果你熟悉Python，C或任意一门编程语言，熟悉lisp这个过程会比较简单。即使不了解其他的编程语言问题也不大，我们可以用语言学的知识去解释。Lisp语言两个显著的特点是括号（类似句子的句号）和动词在前的语序。  
+如果你熟悉Python，C或任意一门编程语言，熟悉lisp这个过程会比较简单。即使不了解其他的编程语言问题也不大，我们可以用语言学的知识去解释。Lisp语言两个显著的特点是括号（类似句子的句号）和动词在前的语序。
+  
 eg1: When you want to express "let a equals to 5", we express it as 'a=5' in python. Both are in a "Subject-verb-object" order. But in lisp we should swap the word order and it will be like (don't forget the bracket):  
 例1：如果你想说让a等于5，在python中它会被写成“a=5”，都为“主谓宾”顺序。而在lisp中我们应该交换谓语和主语的位置（别忘了括号）：  
 ```
@@ -26,7 +27,8 @@ eg2: When you want to express "is a>b ...?", we express it as 'if a>5' in python
 ```
 If you want to apply lisp in CAD, there is one more vital sentence you should put into your mind: (command "key")  
 Basically, command means the lisp will press the key operarion just like you press the key board while you do CAD drawing.  
-如果你想在CAD中运用lisp语言那么 (command "key")  这个句子非常重要。它等同于你在键盘上按下对应的快捷键，即command lisp帮你干活。
+如果你想在CAD中运用lisp语言那么 (command "key")  这个句子非常重要。它等同于你在键盘上按下对应的快捷键，即command lisp帮你干活。  
+  
 eg3: if you want to draw a line from (x1,y1) to (x2,y2):  
 例3：画过（x1,y1）(x2,y2)的线段：
 ```
