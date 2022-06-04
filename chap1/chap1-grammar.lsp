@@ -43,4 +43,13 @@
 ;;; cdr: Contents of the Decrement part of the Register
   
 	
-	
+;;; 6. access to shell
+(defun getpath()
+  (vl-load-com)
+  (command "cmdecho" 0)
+  (setq sh (vla-getInterfaceObject (vlax-get-acad-object) "Shell.Application" ))
+  (setq folder (vlax-invoke-method sh 'BrowseForFolder 0 "" 0 ))
+  (vlax-release-object sh)
+  (setq folderobject (vlax-get-property folder 'Self))
+  (setq result (vlax-get-property FolderObject 'Path))
+  )
