@@ -77,6 +77,6 @@ If you want to use shortcut key to get access to the function - namely, the main
 小结：  
 1. 你需要知道lisp基本格式：（谓语 主语 宾语）
 2. lisp程序可以直接在CAD内嵌的编译器中运行（选择想要运行的行，点击运行这些行）。所以编写测试阶段/临时使用没有必要一次次的在别的cad中加载这个lsp文件。但是封装函数通过加载app的方式运行可以让你的程序更有实用性，更方便分享。
-3. 更多基础语法详见：chap1-eg.lsp或 https://www.yiibai.com/lisp/lisp_decisions.html 
+3. 更多基础语法详见：chap1-grammar.lsp或 https://www.yiibai.com/lisp/lisp_decisions.html 
 
 
