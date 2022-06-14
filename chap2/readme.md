@@ -1,20 +1,24 @@
 # Create a dialog box
-It is convenient to use a dialog box if a bunch of parameters need to be decided before we can run the program. To start a dialog box, first a dcl file should be created in Visual Lisp Compiler.  
-Form to start a dialog:
+It is convenient to use a dialog box if a bunch of parameters need to be decided before we can run the program. To start a dialog box, first a dcl file should be created in Visual Lisp Compiler.   
+Form to start a dialog:  
+如果你的程序里有很多参数的话添加一个对话框会比较方便。第一步需要在Visual Lisp编译器里创建一个dcl文件。  
+对话框函数的基本格式如下：  
 ```
 NAME:dialog{
   label="title of the dialog"
   
 }
 ```
-You can add boxed_row, boxed_columns, text, button to the dialog, for example:
+You can add boxed_row, boxed_columns, text, button to the dialog, for example:  
+你可以添加横向/竖向的输入栏，文字提醒，按钮等，如：
 ```
 :boxed_row{label="name"; key="key"
 }
 :text{label="text"}
 :edit_box{label="label";key="key"}
 ```
-A dialog will be like this:
+A dialog will be like this:  
+一个对话框写好之后就像这样：
 ```
 NS:dialog{
   label="NewSerie";
@@ -59,7 +63,8 @@ NS:dialog{
 ```
   
 # Corresponding Change in the lsp File
-In lsp file we should add several lines to connect lsp file and corresponded dcl file.
+In lsp file we should add several lines to connect lsp file and corresponded dcl file.  
+我们需要对原先写好的lsp文件进行一些变更让他和dcl文件产生连接：
 ```
   ;;;--- Load the dcl file
   (setq dcl_id (load_dialog "dcl-filename.DCL"))
@@ -70,13 +75,16 @@ In lsp file we should add several lines to connect lsp file and corresponded dcl
   ;;;--- Unload the dialog box
   (unload_dialog dcl_id)
 ```
-action_tile and get_tile mean that once some actions occured in the box, the newest value will be returned and saved.
+action_tile & get_tile mean that once some actions occured in the box, the newest value will be returned and saved.  
+action_tile & get_tile句子可以在对应参数发生变化实返回最新的值并把这个值保存下来。
 ```
   (action_tile "x" "(setq *x* (get_tile \"x\"))")
 ```
 *x* is just a way to distinguish key x in the dcl file and it has no other special meanings.
 Note that the whole get_tile sentence is put in "".  
-Example of a complete lsp programme:
+*x*只是用来方便的区分dcl里面的参数x和lsp中的*x*参数的不同，没有任何别的含义，
+Example of a complete lsp programme:  
+一个写好的和dcl联动的lsp程序像这样：
 ```
 (defun c:NS() 
   ;;;--- Load the dcl file
@@ -105,4 +113,6 @@ Example of a complete lsp programme:
   # Launch a wizard
  
   If your program contains dcl files or anykind of files other then lsp file, choose professional mode.  
-  You can add several lsp files and dcl files following the prompts to create a vlx file, which means you can pack several plug-in modules together.
+  You can add several lsp files and dcl files following the prompts to create a vlx file, which means you can pack several plug-in modules together.  
+  在编译器左上角点击“文件”-->"生成应用程序"-->"新建应用程序向导"。  
+  如果程序中有dcl文件或者别的格式的文件选择专家模式，若无选择简单模式。按照提示添加文件打包成一个vlx即可。
